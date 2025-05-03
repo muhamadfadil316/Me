@@ -1,149 +1,342 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Music Playlist | Portfolio</title>
+    <title>My Ultimate Playlist | Music Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap');
+        
+        :root {
+            --primary-purple: #8a2be2;
+            --secondary-purple: #6a0dad;
+            --dark-bg: #0f0a1a;
+            --neon-pink: #ff2d75;
+            --neon-blue: #00f2fe;
+        }
         
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1a0a2e 0%, #3a1a6a 100%);
+            background: var(--dark-bg);
             min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
         .song-card {
-            background: rgba(54, 26, 93, 0.7);
-            backdrop-filter: blur(10px);
+            background: rgba(30, 15, 55, 0.7);
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .song-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(138,43,226,0.1) 0%, rgba(0,0,0,0) 70%);
+            transform: rotate(30deg);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
         
         .song-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            background: rgba(54, 26, 93, 0.9);
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.3);
+            background: rgba(40, 20, 70, 0.9);
+        }
+        
+        .song-card:hover::before {
+            opacity: 1;
         }
         
         .song-number {
-            background: linear-gradient(135deg, #9f7aea 0%, #6b46c1 100%);
+            background: linear-gradient(135deg, var(--neon-pink) 0%, var(--primary-purple) 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 1.2rem;
         }
         
         .play-button {
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(159, 122, 234, 0.4);
+            box-shadow: 0 5px 20px rgba(138, 43, 226, 0.5);
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
         }
         
         .play-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(159, 122, 234, 0.6);
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.7);
         }
         
         .floating-btn {
-            box-shadow: 0 5px 15px rgba(167, 139, 250, 0.4);
+            box-shadow: 0 8px 25px rgba(167, 139, 250, 0.6);
             transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
         }
         
         .floating-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(167, 139, 250, 0.6);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 12px 30px rgba(167, 139, 250, 0.8);
         }
         
         .header-text {
-            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+            text-shadow: 0 3px 15px rgba(255, 255, 255, 0.3);
         }
         
         .artist-name {
             position: relative;
             display: inline-block;
+            font-weight: 500;
         }
         
         .artist-name::after {
             content: '';
             position: absolute;
-            bottom: -2px;
+            bottom: -3px;
             left: 0;
             width: 0;
-            height: 2px;
-            background: #9f7aea;
-            transition: width 0.3s ease;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+            transition: width 0.4s ease;
+            border-radius: 3px;
         }
         
         .song-card:hover .artist-name::after {
             width: 100%;
         }
         
-        /* Purple animated background elements */
+        /* Animated background elements */
         .bg-purple-blob {
             position: fixed;
             border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.2;
+            filter: blur(80px);
+            opacity: 0.15;
             z-index: -1;
-            animation: float 15s infinite ease-in-out;
+            animation: float 18s infinite ease-in-out;
         }
         
         @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -30px) rotate(5deg); }
+            50% { transform: translate(-15px, 20px) rotate(-5deg); }
+            75% { transform: translate(25px, 15px) rotate(3deg); }
         }
         
-        /* Purple gradient text */
+        /* Gradient text */
         .purple-gradient-text {
-            background: linear-gradient(135deg, #d6bcfa 0%, #9f7aea 50%, #6b46c1 100%);
+            background: linear-gradient(135deg, var(--neon-pink) 0%, var(--primary-purple) 50%, var(--neon-blue) 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(138, 43, 226, 0.5);
+        }
+        
+        /* Neon glow effect */
+        .neon-text {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--neon-blue), 0 0 20px var(--primary-purple);
+            animation: flicker 3s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--neon-blue), 0 0 20px var(--primary-purple);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+        
+        /* Pulse animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 4s infinite;
+        }
+        
+        /* Audio wave animation */
+        .audio-bar {
+            animation: audioWave 1.5s infinite ease-in-out;
+            transform-origin: bottom;
+        }
+        
+        .audio-bar:nth-child(2) { animation-delay: 0.2s; }
+        .audio-bar:nth-child(3) { animation-delay: 0.4s; }
+        .audio-bar:nth-child(4) { animation-delay: 0.6s; }
+        .audio-bar:nth-child(5) { animation-delay: 0.8s; }
+        .audio-bar:nth-child(6) { animation-delay: 1s; }
+        .audio-bar:nth-child(7) { animation-delay: 1.2s; }
+        
+        @keyframes audioWave {
+            0%, 100% { transform: scaleY(0.3); }
+            50% { transform: scaleY(1); }
+        }
+        
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* Gradient border */
+        .gradient-border {
+            position: relative;
+            border-radius: 20px;
+        }
+        
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--neon-pink), var(--primary-purple), var(--neon-blue));
+            border-radius: 22px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .gradient-border:hover::before {
+            opacity: 1;
+        }
+        
+        /* Now playing animation */
+        .now-playing {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .now-playing-bar {
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            flex-grow: 1;
+            margin: 0 15px;
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .now-playing-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+            animation: progress 15s linear infinite;
+        }
+        
+        @keyframes progress {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .song-card:hover {
+                transform: translateY(-5px) scale(1.02);
+            }
         }
     </style>
 </head>
 <body class="text-white">
 
-    <!-- Animated Purple Background Elements -->
+    <!-- Animated Background Elements -->
     <div class="fixed inset-0 overflow-hidden -z-10">
-        <div class="bg-purple-blob w-80 h-80 top-20 left-10 bg-purple-400 animate-float"></div>
-        <div class="bg-purple-blob w-96 h-96 top-1/3 right-20 bg-purple-500 animate-float-delay" style="animation-delay: 3s;"></div>
-        <div class="bg-purple-blob w-64 h-64 bottom-20 left-1/3 bg-indigo-400 animate-float-delay-2" style="animation-delay: 6s;"></div>
+        <div class="bg-purple-blob w-80 h-80 top-20 left-10 bg-purple-400" style="animation-delay: 0s;"></div>
+        <div class="bg-purple-blob w-96 h-96 top-1/3 right-20 bg-indigo-500" style="animation-delay: 3s;"></div>
+        <div class="bg-purple-blob w-64 h-64 bottom-20 left-1/3 bg-pink-400" style="animation-delay: 6s;"></div>
+        <div class="bg-purple-blob w-72 h-72 top-1/4 left-1/4 bg-blue-400" style="animation-delay: 9s;"></div>
     </div>
+
+    <!-- Floating Particles -->
+    <div id="particles-container"></div>
 
     <!-- Main Container -->
     <div class="container mx-auto px-4 py-12 max-w-7xl">
-        <!-- Header -->
+        <!-- Header with Now Playing Bar -->
         <header class="mb-16 text-center animate__animated animate__fadeIn">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 header-text">
-                My <span class="purple-gradient-text">Favorite</span> Playlist
+            <div class="now-playing mb-6">
+                <span class="text-sm text-purple-200">PREV</span>
+                <div class="now-playing-bar">
+                    <div class="now-playing-progress"></div>
+                </div>
+                <span class="text-sm text-purple-200">NEXT</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 header-text hero-title">
+                <span class="purple-gradient-text neon-text">SOUL</span> VIBES
             </h1>
-            <p class="text-xl text-purple-100 max-w-2xl mx-auto">
-                A curated collection of tracks that inspire me, move me, and define my creative journey.
+            <p class="text-xl text-purple-100 max-w-2xl mx-auto mb-6">
+                A sonic journey through my emotional landscape
             </p>
-            <div class="mt-8 flex justify-center space-x-4">
-                <span class="inline-block w-12 h-1 bg-purple-400 rounded-full"></span>
-                <span class="inline-block w-6 h-1 bg-purple-400 rounded-full"></span>
-                <span class="inline-block w-3 h-1 bg-purple-400 rounded-full"></span>
+            
+            <div class="flex justify-center items-center space-x-4">
+                <div class="flex space-x-2">
+                    <div class="audio-bar w-1 h-4 bg-purple-400 rounded-full"></div>
+                    <div class="audio-bar w-1 h-6 bg-purple-400 rounded-full"></div>
+                    <div class="audio-bar w-1 h-8 bg-purple-400 rounded-full"></div>
+                    <div class="audio-bar w-1 h-6 bg-purple-400 rounded-full"></div>
+                    <div class="audio-bar w-1 h-4 bg-purple-400 rounded-full"></div>
+                </div>
+                <span class="text-purple-300 text-sm">NOW PLAYING</span>
+                <div class="flex space-x-2">
+                    <div class="audio-bar w-1 h-4 bg-purple-400 rounded-full"></div>
+                    <div class="audio-bar w-1 h-6 bg-purple-400 rounded-full"></div>
+                    <div class="audio-bar w-1 h-8 bg-purple-400 rounded-full"></div>
+                    <div class="audio-bar w-1 h-6 bg-purple-400 rounded-full"></div>
+                    <div class="audio-bar w-1 h-4 bg-purple-400 rounded-full"></div>
+                </div>
             </div>
         </header>
 
         <!-- Grid for songs -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             <!-- Song 1 -->
-            <div class="song-card rounded-xl overflow-hidden animate__animated animate__fadeInUp">
+            <div class="song-card gradient-border animate__animated animate__fadeInUp">
                 <div class="relative">
                     <img src="../img/song/wildflower.jpg" alt="Wildflower" class="w-full h-60 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                         <span class="text-sm text-purple-100">A hauntingly beautiful track that showcases Billie's vocal range</span>
                     </div>
                     <div class="absolute top-4 left-4 bg-black/70 px-3 py-1 rounded-full text-sm font-medium">
-                        <span class="song-number">#1</span>
+                        <span class="song-number">01</span>
+                    </div>
+                    <div class="absolute top-4 right-4 flex space-x-2">
+                        <span class="bg-black/70 px-2 py-1 rounded-full text-xs font-medium text-purple-200">POP</span>
+                        <span class="bg-black/70 px-2 py-1 rounded-full text-xs font-medium text-pink-200">INDIE</span>
                     </div>
                 </div>
                 <div class="p-6">
@@ -151,15 +344,16 @@
                     <p class="text-purple-200 mb-5 artist-name">Billie Eilish</p>
                     <div class="flex items-center justify-between">
                         <a href="https://open.spotify.com/track/3QaPy1KgI7nu9FJEQUgn6h?si=iyhPmj4vQiWqmwPlJxOBfw" 
-                           class="play-button w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center hover:bg-purple-600">
-                            <i class="fas fa-play text-white"></i>
+                           class="play-button w-12 h-12 rounded-full flex items-center justify-center">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
                         <div class="flex space-x-3">
-                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors">
-                                <i class="far fa-heart text-purple-300"></i>
+                            <span class="text-xs text-purple-300 self-center">3:42</span>
+                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors group">
+                                <i class="far fa-heart text-purple-300 group-hover:text-pink-400 transition-colors"></i>
                             </button>
-                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors">
-                                <i class="fas fa-ellipsis-h text-purple-200"></i>
+                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors group">
+                                <i class="fas fa-ellipsis-h text-purple-200 group-hover:text-white transition-colors"></i>
                             </button>
                         </div>
                     </div>
@@ -167,14 +361,18 @@
             </div>
 
             <!-- Song 2 -->
-            <div class="song-card rounded-xl overflow-hidden animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="song-card gradient-border animate__animated animate__fadeInUp animate__delay-1s">
                 <div class="relative">
                     <img src="../img/song/what was i made for.jpg" alt="What Was I Made For?" class="w-full h-60 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                         <span class="text-sm text-purple-100">Introspective lyrics with minimalist production</span>
                     </div>
                     <div class="absolute top-4 left-4 bg-black/70 px-3 py-1 rounded-full text-sm font-medium">
-                        <span class="song-number">#2</span>
+                        <span class="song-number">02</span>
+                    </div>
+                    <div class="absolute top-4 right-4 flex space-x-2">
+                        <span class="bg-black/70 px-2 py-1 rounded-full text-xs font-medium text-purple-200">POP</span>
+                        <span class="bg-black/70 px-2 py-1 rounded-full text-xs font-medium text-blue-200">BALLAD</span>
                     </div>
                 </div>
                 <div class="p-6">
@@ -182,15 +380,16 @@
                     <p class="text-purple-200 mb-5 artist-name">Billie Eilish</p>
                     <div class="flex items-center justify-between">
                         <a href="https://open.spotify.com/track/6wf7Yu7cxBSPrRlWeSeK0Q?si=c5rXlLsKTPOkFemG46fdkQ" 
-                           class="play-button w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center hover:bg-purple-600">
-                            <i class="fas fa-play text-white"></i>
+                           class="play-button w-12 h-12 rounded-full flex items-center justify-center">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
                         <div class="flex space-x-3">
-                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors">
-                                <i class="far fa-heart text-purple-300"></i>
+                            <span class="text-xs text-purple-300 self-center">3:42</span>
+                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors group">
+                                <i class="far fa-heart text-purple-300 group-hover:text-pink-400 transition-colors"></i>
                             </button>
-                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors">
-                                <i class="fas fa-ellipsis-h text-purple-200"></i>
+                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors group">
+                                <i class="fas fa-ellipsis-h text-purple-200 group-hover:text-white transition-colors"></i>
                             </button>
                         </div>
                     </div>
@@ -198,14 +397,18 @@
             </div>
 
             <!-- Song 3 -->
-            <div class="song-card rounded-xl overflow-hidden animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="song-card gradient-border animate__animated animate__fadeInUp animate__delay-2s">
                 <div class="relative">
                     <img src="../img/song/open arms.jpg" alt="Open Arms" class="w-full h-60 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                         <span class="text-sm text-purple-100">SZA and Travis Scott create magic with this collaboration</span>
                     </div>
                     <div class="absolute top-4 left-4 bg-black/70 px-3 py-1 rounded-full text-sm font-medium">
-                        <span class="song-number">#3</span>
+                        <span class="song-number">03</span>
+                    </div>
+                    <div class="absolute top-4 right-4 flex space-x-2">
+                        <span class="bg-black/70 px-2 py-1 rounded-full text-xs font-medium text-purple-200">R&B</span>
+                        <span class="bg-black/70 px-2 py-1 rounded-full text-xs font-medium text-yellow-200">HIP-HOP</span>
                     </div>
                 </div>
                 <div class="p-6">
@@ -213,15 +416,16 @@
                     <p class="text-purple-200 mb-5 artist-name">SZA ft. Travis Scott</p>
                     <div class="flex items-center justify-between">
                         <a href="https://open.spotify.com/track/0xaFw2zDYf1rIJWl2dXiSF?si=ONA0eMGwStKwAr6UX6sY0w" 
-                           class="play-button w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center hover:bg-purple-600">
-                            <i class="fas fa-play text-white"></i>
+                           class="play-button w-12 h-12 rounded-full flex items-center justify-center">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
                         <div class="flex space-x-3">
-                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors">
-                                <i class="far fa-heart text-purple-300"></i>
+                            <span class="text-xs text-purple-300 self-center">3:59</span>
+                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors group">
+                                <i class="far fa-heart text-purple-300 group-hover:text-pink-400 transition-colors"></i>
                             </button>
-                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors">
-                                <i class="fas fa-ellipsis-h text-purple-200"></i>
+                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors group">
+                                <i class="fas fa-ellipsis-h text-purple-200 group-hover:text-white transition-colors"></i>
                             </button>
                         </div>
                     </div>
@@ -229,14 +433,18 @@
             </div>
 
             <!-- Song 4 -->
-            <div class="song-card rounded-xl overflow-hidden animate__animated animate__fadeInUp animate__delay-3s">
+            <div class="song-card gradient-border animate__animated animate__fadeInUp animate__delay-3s">
                 <div class="relative">
                     <img src="../img/song/mendarah.jpg" alt="Mendarah" class="w-full h-60 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                         <span class="text-sm text-purple-100">Emotional depth in Nadin Amizah's poetic lyrics</span>
                     </div>
                     <div class="absolute top-4 left-4 bg-black/70 px-3 py-1 rounded-full text-sm font-medium">
-                        <span class="song-number">#4</span>
+                        <span class="song-number">04</span>
+                    </div>
+                    <div class="absolute top-4 right-4 flex space-x-2">
+                        <span class="bg-black/70 px-2 py-1 rounded-full text-xs font-medium text-purple-200">INDIE</span>
+                        <span class="bg-black/70 px-2 py-1 rounded-full text-xs font-medium text-red-200">FOLK</span>
                     </div>
                 </div>
                 <div class="p-6">
@@ -244,15 +452,16 @@
                     <p class="text-purple-200 mb-5 artist-name">Nadin Amizah</p>
                     <div class="flex items-center justify-between">
                         <a href="https://open.spotify.com/track/75OokMC3JzPnRNXcLTAKdr?si=1aQju0ZSTKmwBOYOadUxww" 
-                           class="play-button w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center hover:bg-purple-600">
-                            <i class="fas fa-play text-white"></i>
+                           class="play-button w-12 h-12 rounded-full flex items-center justify-center">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
                         <div class="flex space-x-3">
-                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors">
-                                <i class="far fa-heart text-purple-300"></i>
+                            <span class="text-xs text-purple-300 self-center">4:15</span>
+                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors group">
+                                <i class="far fa-heart text-purple-300 group-hover:text-pink-400 transition-colors"></i>
                             </button>
-                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors">
-                                <i class="fas fa-ellipsis-h text-purple-200"></i>
+                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors group">
+                                <i class="fas fa-ellipsis-h text-purple-200 group-hover:text-white transition-colors"></i>
                             </button>
                         </div>
                     </div>
@@ -260,14 +469,18 @@
             </div>
 
             <!-- Song 5 -->
-            <div class="song-card rounded-xl overflow-hidden animate__animated animate__fadeInUp animate__delay-4s">
+            <div class="song-card gradient-border animate__animated animate__fadeInUp animate__delay-4s">
                 <div class="relative">
                     <img src="../img/song/semua aku dirayakan.jpg" alt="Semua Aku Dirayakan" class="w-full h-60 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                         <span class="text-sm text-purple-100">A celebration of self in Nadin's unique musical style</span>
                     </div>
                     <div class="absolute top-4 left-4 bg-black/70 px-3 py-1 rounded-full text-sm font-medium">
-                        <span class="song-number">#5</span>
+                        <span class="song-number">05</span>
+                    </div>
+                    <div class="absolute top-4 right-4 flex space-x-2">
+                        <span class="bg-black/70 px-2 py-1 rounded-full text-xs font-medium text-purple-200">INDIE</span>
+                        <span class="bg-black/70 px-2 py-1 rounded-full text-xs font-medium text-green-200">ALTERNATIVE</span>
                     </div>
                 </div>
                 <div class="p-6">
@@ -275,22 +488,21 @@
                     <p class="text-purple-200 mb-5 artist-name">Nadin Amizah</p>
                     <div class="flex items-center justify-between">
                         <a href="https://open.spotify.com/track/2x3vwXWuecPrRqgEUuSUJA?si=XoV_Q93kTfyznMghWfMU0A" 
-                           class="play-button w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center hover:bg-purple-600">
-                            <i class="fas fa-play text-white"></i>
+                           class="play-button w-12 h-12 rounded-full flex items-center justify-center">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
                         <div class="flex space-x-3">
-                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors">
-                                <i class="far fa-heart text-purple-300"></i>
+                            <span class="text-xs text-purple-300 self-center">3:30</span>
+                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors group">
+                                <i class="far fa-heart text-purple-300 group-hover:text-pink-400 transition-colors"></i>
                             </button>
-                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors">
-                                <i class="fas fa-ellipsis-h text-purple-200"></i>
+                            <button class="w-10 h-10 rounded-full bg-purple-900/50 hover:bg-purple-800/50 flex items-center justify-center transition-colors group">
+                                <i class="fas fa-ellipsis-h text-purple-200 group-hover:text-white transition-colors"></i>
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
         <!-- Call to Action -->
         <div class="mt-20 text-center animate__animated animate__fadeIn">
             <h3 class="text-2xl font-semibold mb-4">Want to see more of my music taste?</h3>
