@@ -1,259 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio</title>
-    <style>
-        @media (max-width: 768px) {
-            .menu-open {
-                display: block;
-            }
-        }
-    </style>
-    <link class="rounded-sm border-radius: 0.125rem;" rel="shortcut icon" href="img/FO.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio</title>
+  <style>
+    @media (max-width: 768px) {
+      .menu-open {
+        display: block;
+      }
+    }
+  </style>
+  <link class="rounded-sm border-radius: 0.125rem;" rel="shortcut icon" href="img/FO.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 <script>
-    document.addEventListener('contextmenu', function(e) {
-        if (e.target.tagName === 'IMG') {
-            e.preventDefault();
-        }
-    });
+  document.addEventListener('contextmenu', function (e) {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+    }
+  });
 
-    document.addEventListener('dragstart', function(e) {
-        if (e.target.tagName === 'IMG') {
-            e.preventDefault();
-        }
-    });
+  document.addEventListener('dragstart', function (e) {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+    }
+  });
 </script>
+
 <body>
-    <nav class="fixed w-full bg-gradient-to-r from-[#0C0950] via-[#161179] to-[#261FB3] text-white z-50 shadow-lg">
-        <div class="container mx-auto px-6">
-          <div class="flex justify-between items-center h-16">
-            <!-- Logo -->
-            <a href="#home" class="flex items-center space-x-3">
-              <img src="img/FO.jpg" alt="Logo" class="h-12 w-auto rounded-full border-2 border-white shadow-md">
-              <span class="text-xl font-bold tracking-widest hover:text-teal-300 transition-all duration-300">Fadil Orsy</span>
-            </a>
-      
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-8 font-medium">
-              <a href="#home" class="hover:text-orange-300 transition">Home</a>
-              <a href="#about" class="hover:text-orange-300 transition">About</a>
-              <a href="#testimoni" class="hover:text-orange-300 transition">Response</a>
-              <a href="#skills" class="hover:text-orange-300 transition">Skills</a>
-              <a href="#galeri" class="hover:text-orange-300 transition">Gallery</a>
-            </div>
-      
-            <!-- Mobile Menu Toggle -->
-            <button id="menuToggle" class="md:hidden text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300 transition">
-              <i class="fas fa-bars text-2xl"></i>
-            </button>
-          </div>
-      
-          <!-- Mobile Menu -->
-          <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2 font-medium">
-            <a href="#home" class="block py-2 hover:text-orange-300 transition">Home</a>
-            <a href="#about" class="block py-2 hover:text-orange-300 transition">About</a>
-            <a href="#testimoni" class="block py-2 hover:text-orange-300 transition">Response</a>
-            <a href="#skills" class="block py-2 hover:text-orange-300 transition">Skills</a>
-            <a href="#galeri" class="block py-2 hover:text-orange-300 transition">Gallery</a>
-          </div>
+  <nav class="fixed w-full bg-gradient-to-r from-[#0C0950] via-[#161179] to-[#261FB3] text-white z-50 shadow-lg">
+    <div class="container mx-auto px-6">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center space-x-3">
+          <img src="img/FO.jpg" alt="Logo" class="h-12 w-auto rounded-full border-2 border-white shadow-md">
+          <span class="text-xl font-bold tracking-widest hover:text-teal-300 transition-all duration-300">Fadil
+            Orsy</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8 font-medium">
+          <a href="#home" class="hover:text-orange-300 transition">Home</a>
+          <a href="#about" class="hover:text-orange-300 transition">About</a>
+          <a href="#testimoni" class="hover:text-orange-300 transition">Response</a>
+          <a href="#skills" class="hover:text-orange-300 transition">Skills</a>
+          <a href="#galeri" class="hover:text-orange-300 transition">Gallery</a>
         </div>
-      </nav>
-      
 
-        <!-- ___________________________________________________________________________________________ -->
+        <!-- Mobile Menu Toggle -->
+        <button id="menuToggle"
+          class="md:hidden text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300 transition">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
 
-    <!-- hero -->
-    <section id="home" class="pt-36 hidden-section">
-        <div class="container">
-           <div class="flex flex-wrap">
-    <!-- Text -->
-    <div class="w-full self-center px-4 lg:w-1/2">
-        <h1 class="text-base font-semibold text-[#261FB3] md:text-xl">Haiii👋🏻, My name is</h1> 
-        <span class="block font-bold text-[#261FB3] text-4xl mt-1 lg:text-5xl">Muhamad Fadil</span>
-        <h2 class="font-medium text-slate-400 text-lg mb-5 lg:text-2xl">
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2 font-medium">
+        <a href="#home" class="block py-2 hover:text-orange-300 transition">Home</a>
+        <a href="#about" class="block py-2 hover:text-orange-300 transition">About</a>
+        <a href="#testimoni" class="block py-2 hover:text-orange-300 transition">Response</a>
+        <a href="#skills" class="block py-2 hover:text-orange-300 transition">Skills</a>
+        <a href="#galeri" class="block py-2 hover:text-orange-300 transition">Gallery</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ___________________________________________________________________________________________ -->
+
+  <!-- hero -->
+  <section id="home" class="pt-36 hidden-section">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <!-- Text -->
+        <div class="w-full self-center px-4 lg:w-1/2">
+          <h1 class="text-base font-semibold text-[#261FB3] md:text-xl">Haiii👋🏻, My name is</h1>
+          <span class="block font-bold text-[#261FB3] text-4xl mt-1 lg:text-5xl">Muhamad Fadil</span>
+          <h2 class="font-medium text-slate-400 text-lg mb-5 lg:text-2xl">
             <span class="block">Informatics Engineering | Public Speakers</span>
             <span class="text-[#261FB3] lg:block">(Penetration Testing)</span>
-        </h2>
-               
-        <!--button-->
-        <div class="mb-6 flex gap-4 flex-wrap">
-          <a href="./mysong/index.html" class="relative overflow-hidden group">
-            <span class="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#4B0082] group-hover:bg-gradient-to-bl transition-all duration-300 rounded-full"></span>
-            <span class="relative z-10 flex items-center text-white font-medium py-3 px-8 text-lg tracking-wide">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 group-hover:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+          </h2>
+
+          <!--button-->
+          <div class="mb-6 flex gap-4 flex-wrap">
+            <a href="./mysong/index.html" class="relative overflow-hidden group">
+              <span
+                class="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#4B0082] group-hover:bg-gradient-to-bl transition-all duration-300 rounded-full"></span>
+              <span class="relative z-10 flex items-center text-white font-medium py-3 px-8 text-lg tracking-wide">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 group-hover:animate-bounce" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                 </svg>
                 MySongs
+              </span>
+            </a>
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="flex items-center space-x-4">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/fadilorsy?igsh=MW1wYmxvZTk4em9jeQ%3D%3D&utm_source=qr" target="_blank"
+              class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
+              <i class="fa-brands fa-instagram fill-current"></i>
+            </a>
+            <!-- Spotify -->
+            <a href="https://open.spotify.com/playlist/3Uc6LyP30m1WdJmvn9I1xL?si=CuBtxlQESxiLTP_yKKVHZw&pi=qiUQveifRUqH3"
+              target="_blank"
+              class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
+              <i class="fa-brands fa-spotify fill-current"></i>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/muhamadfadil316" target="_blank"
+              class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
+              <i class="fa-brands fa-github fill-current"></i>
+            </a>
+            <!-- linkedin -->
+            <a href="https://www.linkedin.com/in/muhamad-fadil-418ba5334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"
+              class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
+              <i class="fa-brands fa-linkedin fill-current"></i>
+            </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@fadilorsy?_t=ZS-8vlZ3n404db&_r=1" target="_blank"
+              class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
+              <i class="fa-brands fa-tiktok fill-current"></i>
+            </a>
+
+          </div>
+        </div>
+        <!-- Gambar -->
+        <div class="w-full self-end px-4 lg:w-1/2 lg:order-last">
+          <div class="relative mt-10 lg:mt-0 lg:right-0">
+            <img src="./img/me-nobg.png" alt="foto1" class="max-w-full mx-auto ">
+            <span class="absolute -bottom-10 -z-10 left-1/2 -translate-x-1/2 md:scale-125 ">
+              <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#9370db" />
+                    <stop offset="100%" stop-color="#483d8b" />
+                  </linearGradient>
+                </defs>
+                <path fill="url(#grad2)" d="M0,100 C50,180 50,20 100,100 C150,180 150,20 200,100 L200,200 L0,200 Z">
+                </path>
+              </svg>
             </span>
-          </a>
-        </div>
-                    
-                    <!-- Social Media Icons -->
-                   <div class="flex items-center space-x-4">
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/fadilorsy?igsh=MW1wYmxvZTk4em9jeQ%3D%3D&utm_source=qr" target="_blank" class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
-                            <i class="fa-brands fa-instagram fill-current"></i>
-                        </a>
-                        <!-- Spotify -->
-                        <a href="https://open.spotify.com/playlist/3Uc6LyP30m1WdJmvn9I1xL?si=CuBtxlQESxiLTP_yKKVHZw&pi=qiUQveifRUqH3" target="_blank" class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
-                            <i class="fa-brands fa-spotify fill-current"></i>
-                        </a>
-                        <!-- GitHub -->
-                        <a href="https://github.com/muhamadfadil316" target="_blank" class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
-                            <i class="fa-brands fa-github fill-current"></i>
-                        </a>
-                        <!-- linkedin -->
-                         <a href="https://www.linkedin.com/in/muhamad-fadil-418ba5334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
-                           <i class="fa-brands fa-linkedin fill-current"></i>
-                        </a>
-                        <!-- TikTok -->
-                        <a href="https://www.tiktok.com/@fadilorsy?_t=ZS-8vlZ3n404db&_r=1" target="_blank" class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
-                            <i class="fa-brands fa-tiktok fill-current"></i>
-                        </a>
-                      
-                    </div>
-                </div>
-                <!-- Gambar -->
-                <div class="w-full self-end px-4 lg:w-1/2 lg:order-last">
-                    <div class="relative mt-10 lg:mt-0 lg:right-0">
-                        <img src="./img/me-nobg.png" alt="foto1" class="max-w-full mx-auto ">
-                        <span class="absolute -bottom-10 -z-10 left-1/2 -translate-x-1/2 md:scale-125 ">
-                          <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                              <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#9370db" />
-                                <stop offset="100%" stop-color="#483d8b" />
-                              </linearGradient>
-                            </defs>
-                            <path fill="url(#grad2)" d="M0,100 C50,180 50,20 100,100 C150,180 150,20 200,100 L200,200 L0,200 Z"></path>
-                          </svg>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <style>
-        @media (max-width: 1023px) {
-            .lg\:order-last {
-                order: 1; 
-            }
-        }
-    
-        @media (min-width: 1024px) {
-            .lg\:order-last {
-                order: 2;
-            }
-        }
-    </style>
-     <!-- hero en -->
-
-<!-- _________________________________________________________________ -->
-
-
-
- <!-- About Section -->
-<section id="about" class="pt-36 pb-32 mt-0 hidden-section bg-gradient-to-b from-[#1a0a2e] to-[#3a1a6a]">
-  <div class="container">
-      <div class="flex flex-wrap">
-          <!-- Left Section -->
-          <div class="w-full px-4 mb-10 lg:w-1/2">
-              <h4 class="font-bold uppercase text-purple-300 text-lg mb-3 tracking-wider">About Me</h4>
-              <h1 class="font-bold text-white text-3xl mb-5 max-w-md lg:text-4xl">
-                  The journey begins with 
-                  <span class="bg-gradient-to-r from-purple-400 to-indigo-500 bg-clip-text text-transparent">purpose</span>
-              </h1>
-              
-              <div class="space-y-4">
-                  <p class="font-medium text-base text-purple-100 max-w-xl lg:text-lg">
-                      Before becoming the person I am today, I often found myself in situations where people underestimated me—whether it was my friends, siblings, or even my parents. Perhaps it was because, at an age where I was expected to have clear goals, I still had no direction in life.
-                  </p>
-                  
-                  <p class="font-medium text-base text-purple-100 max-w-xl lg:text-lg">
-                      For three years, I worked without any real purpose or meaningful experience. Life felt empty and aimless. However, one night, I came to a realization: I couldn't go on living like that. I needed change—a life with meaning, purpose, and hope.
-                  </p>
-                  
-                  <p class="font-medium text-base text-purple-100 max-w-xl lg:text-lg">
-                      That night marked the beginning of a new journey, and I decided to pursue higher education as my first step toward a better future. I wanted to prove that I could grow through every process, no matter how small.
-                  </p>
-              </div>
           </div>
-
-          <!-- Right Section -->
-          <div class="w-full px-4 lg:w-1/2 relative">
-              <div class="bg-purple-900/30 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20 shadow-lg">
-                  <h3 class="font-semibold text-white text-2xl mb-4 lg:text-3xl">
-                      <span class="bg-gradient-to-r from-purple-300 to-indigo-300 bg-clip-text text-transparent">Let's be friends</span>
-                  </h3>
-                  
-                  <div class="space-y-4">
-                      <p class="font-medium text-base text-purple-100 lg:text-lg">
-                          I'm someone you can count on—especially when others need support. I genuinely care about those around me and always try to lend a hand, believing that mutual help builds harmony within any team or group.
-                      </p>
-                      
-                      <p class="font-medium text-base text-purple-100 lg:text-lg">
-                          Whenever I'm part of a group, I make it my goal to contribute in ways that uplift everyone, while continuously working to improve myself. I'm also very open to connecting with people who are eager to grow.
-                      </p>
-                      
-                      <p class="font-medium text-base text-purple-100 lg:text-lg">
-                          I believe that personal growth and strong, supportive relationships are the foundation of meaningful and lasting friendships.
-                      </p>
-                  </div>
-                  
-                  <!-- Floating Logo -->
-                  <div class="absolute -bottom-5 -right-5 w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-xl border-2 border-white/20">
-                      <img src="img/FO.jpg" alt="Logo" class="w-14 h-14 rounded-full object-cover border border-white/10">
-                  </div>
-              </div>
-              
-              <!-- Decorative Elements -->
-              <div class="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-purple-500/20 blur-xl"></div>
-              <div class="absolute bottom-20 -left-10 w-20 h-20 rounded-full bg-indigo-500/20 blur-xl"></div>
-          </div>
+        </div>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- Style for decorative blobs -->
-<style>
-  @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-15px) rotate(5deg); }
-  }
-  
-  .floating-blob {
+  <style>
+    @media (max-width: 1023px) {
+      .lg\:order-last {
+        order: 1;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .lg\:order-last {
+        order: 2;
+      }
+    }
+  </style>
+  <!-- hero en -->
+
+  <!-- _________________________________________________________________ -->
+
+
+
+  <!-- About Section -->
+  <section id="about" class="pt-36 pb-32 mt-0 hidden-section bg-gradient-to-b from-[#1a0a2e] to-[#3a1a6a]">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <!-- Left Section -->
+        <div class="w-full px-4 mb-10 lg:w-1/2">
+          <h4 class="font-bold uppercase text-purple-300 text-lg mb-3 tracking-wider">About Me</h4>
+          <h1 class="font-bold text-white text-3xl mb-5 max-w-md lg:text-4xl">
+            The journey begins with
+            <span class="bg-gradient-to-r from-purple-400 to-indigo-500 bg-clip-text text-transparent">purpose</span>
+          </h1>
+
+          <div class="space-y-4">
+            <p class="font-medium text-base text-purple-100 max-w-xl lg:text-lg">
+              Before becoming the person I am today, I often found myself in situations where people underestimated
+              me—whether it was my friends, siblings, or even my parents. Perhaps it was because, at an age where I was
+              expected to have clear goals, I still had no direction in life.
+            </p>
+
+            <p class="font-medium text-base text-purple-100 max-w-xl lg:text-lg">
+              For three years, I worked without any real purpose or meaningful experience. Life felt empty and aimless.
+              However, one night, I came to a realization: I couldn't go on living like that. I needed change—a life
+              with meaning, purpose, and hope.
+            </p>
+
+            <p class="font-medium text-base text-purple-100 max-w-xl lg:text-lg">
+              That night marked the beginning of a new journey, and I decided to pursue higher education as my first
+              step toward a better future. I wanted to prove that I could grow through every process, no matter how
+              small.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="w-full px-4 lg:w-1/2 relative">
+          <div class="bg-purple-900/30 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20 shadow-lg">
+            <h3 class="font-semibold text-white text-2xl mb-4 lg:text-3xl">
+              <span class="bg-gradient-to-r from-purple-300 to-indigo-300 bg-clip-text text-transparent">Let's be
+                friends</span>
+            </h3>
+
+            <div class="space-y-4">
+              <p class="font-medium text-base text-purple-100 lg:text-lg">
+                I'm someone you can count on—especially when others need support. I genuinely care about those around me
+                and always try to lend a hand, believing that mutual help builds harmony within any team or group.
+              </p>
+
+              <p class="font-medium text-base text-purple-100 lg:text-lg">
+                Whenever I'm part of a group, I make it my goal to contribute in ways that uplift everyone, while
+                continuously working to improve myself. I'm also very open to connecting with people who are eager to
+                grow.
+              </p>
+
+              <p class="font-medium text-base text-purple-100 lg:text-lg">
+                I believe that personal growth and strong, supportive relationships are the foundation of meaningful and
+                lasting friendships.
+              </p>
+            </div>
+
+            <!-- Floating Logo -->
+            <div
+              class="absolute -bottom-5 -right-5 w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-xl border-2 border-white/20">
+              <img src="img/FO.jpg" alt="Logo" class="w-14 h-14 rounded-full object-cover border border-white/10">
+            </div>
+          </div>
+
+          <!-- Decorative Elements -->
+          <div class="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-purple-500/20 blur-xl"></div>
+          <div class="absolute bottom-20 -left-10 w-20 h-20 rounded-full bg-indigo-500/20 blur-xl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Style for decorative blobs -->
+  <style>
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-15px) rotate(5deg);
+      }
+    }
+
+    .floating-blob {
       position: absolute;
       border-radius: 50%;
       filter: blur(40px);
       opacity: 0.3;
       z-index: -1;
       animation: float 12s infinite ease-in-out;
-  }
-</style>
-     <!-- about en -->
+    }
+  </style>
+  <!-- about en -->
 
-       <!-- Testimoni Section -->
-<section id="testimoni" class="pt-36 pb-32 bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800">
+  <!-- Testimoni Section -->
+  <section id="testimoni" class="pt-36 pb-32 bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800">
     <div class="container mx-auto px-4">
       <h2 class="font-bold text-white text-4xl mb-16 text-center tracking-wide">
         🗣️ What They Say About Fadil
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        
+
         <!-- Testimoni 1 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group">
           <p class="text-white mb-6 italic leading-relaxed">
-            “Fadil adalah pribadi yang sangat baik dan memiliki kemampuan komunikasi yang luar biasa. Ia sopan, mudah beradaptasi, dan disukai banyak orang.”
+            “Fadil adalah pribadi yang sangat baik dan memiliki kemampuan komunikasi yang luar biasa. Ia sopan, mudah
+            beradaptasi, dan disukai banyak orang.”
           </p>
           <div class="flex items-center">
             <img src="img/rapa 2.jpg" alt="Rafa" class="w-12 h-12 rounded-full border-2 border-orange-400 shadow mr-4">
@@ -263,11 +299,13 @@
             </div>
           </div>
         </div>
-  
+
         <!-- Testimoni 2 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group">
           <p class="text-white mb-4 italic leading-relaxed">
-            “Fadil berhasil keluar dari zona nyaman dan mulai aktif dalam kegiatan. Ia menjadi sosok yang inspiratif dan penuh inisiatif.”
+            “Fadil berhasil keluar dari zona nyaman dan mulai aktif dalam kegiatan. Ia menjadi sosok yang inspiratif dan
+            penuh inisiatif.”
           </p>
           <p class="text-white mb-6 italic leading-relaxed">
             “Kini Fadil menjadi contoh bagaimana perubahan kecil membentuk pribadi yang percaya diri dan kolaboratif.”
@@ -280,28 +318,31 @@
             </div>
           </div>
         </div>
-  
+
         <!-- Testimoni 3 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group">
           <p class="text-white mb-6 italic leading-relaxed">
-            “Awalnya saya kira Fadil pendiam. Tapi ternyata dia ramah, peduli, dan jago IT. Ia juga dikenal rajin ibadah dan punya kebiasaan positif.”
+            “Awalnya saya kira Fadil pendiam. Tapi ternyata dia ramah, peduli, dan jago IT. Ia juga dikenal rajin ibadah
+            dan punya kebiasaan positif.”
           </p>
           <div class="flex items-center">
-            <img src="img/rahman.jpg" alt="Rahman" class="w-12 h-12 rounded-full border-2 border-orange-400 shadow mr-4">
+            <img src="img/rahman.jpg" alt="Rahman"
+              class="w-12 h-12 rounded-full border-2 border-orange-400 shadow mr-4">
             <div>
               <h5 class="font-semibold text-white">Muhammad Shofiyyurrohman</h5>
               <p class="text-sm text-orange-200">Risalam</p>
             </div>
           </div>
         </div>
-  
+
       </div>
     </div>
-  </section>  
-   
+  </section>
 
-<!-- Galeri Pencapaian Section -->
-<section id="galeri" class="pt-36 pb-20 bg-gradient-to-br from-purple-700 via-indigo-800 to-purple-900">
+
+  <!-- Galeri Pencapaian Section -->
+  <section id="galeri" class="pt-36 pb-20 bg-gradient-to-br from-purple-700 via-indigo-800 to-purple-900">
     <div class="container mx-auto px-4">
       <h2 class="font-bold text-white text-4xl mb-4 text-center tracking-wide">
         🏆 Achievement Gallery
@@ -309,34 +350,58 @@
       <h3 class="font-semibold text-orange-300 uppercase text-lg mb-12 text-center tracking-widest">
         Website Creation Projects
       </h3>
-  
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-  
+
         <!-- Galeri Item 1 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up">
-          <img src="img/projek undangan.png" alt="Project 1" class="w-full h-48 object-cover rounded-lg mb-6 shadow-lg shadow-teal-400/50 group-hover:scale-105 transition-transform duration-300">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
+          data-aos="fade-up">
+          <img src="img/projek undangan.png" alt="Project 1"
+            class="w-full h-48 object-cover rounded-lg mb-6 shadow-lg shadow-teal-400/50 group-hover:scale-105 transition-transform duration-300">
           <h5 class="font-bold text-white text-xl mb-2">Website Undangan</h5>
           <p class="text-slate-300 leading-relaxed">
-            Building an invitation website to streamline event management and engage invitees in a more elegant and efficient way.
+            Building an invitation website to streamline event management and engage invitees in a more elegant and
+            efficient way.
           </p>
         </div>
-  
+
         <!-- Galeri Item 2 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="150">
-          <img src="img/bengkel kita.jpg" alt="Project 2" class="w-full h-48 object-cover rounded-lg mb-6 shadow-lg shadow-teal-400/50 group-hover:scale-105 transition-transform duration-300">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
+          data-aos="fade-up" data-aos-delay="150">
+          <img src="img/bengkel kita.jpg" alt="Project 2"
+            class="w-full h-48 object-cover rounded-lg mb-6 shadow-lg shadow-teal-400/50 group-hover:scale-105 transition-transform duration-300">
           <h5 class="font-bold text-white text-xl mb-2">Website Bengkel</h5>
           <p class="text-slate-300 leading-relaxed">
-            Developing an automotive workshop platform to manage bookings and increase customer outreach through digital presence.
+            Developing an automotive workshop platform to manage bookings and increase customer outreach through digital
+            presence.
           </p>
         </div>
-  
+
+        <!-- Galeri Item 3 -->
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
+          data-aos="fade-up" data-aos-delay="150">
+          <img src="img/projek web mukm.jpg" alt="Project 2"
+            class="w-full h-48 object-cover rounded-lg mb-6 shadow-lg shadow-teal-400/50 group-hover:scale-105 transition-transform duration-300">
+          <h5 class="font-bold text-white text-xl mb-2">Website UMKM</h5>
+          <p class="text-slate-300 leading-relaxed">
+            Empower Your Small Business with Digital Solutions
+            A smart platform to help manage operations, promote your products, and digitize your UMKM data. Reach more
+            customers and grow your business with ease through integrated digital tools.
+
+
+          </p>
+        </div>
+
       </div>
     </div>
-  </section>  
+  </section>
 
 
-    <!-- Gue Kece - Achievement Gallery 2 -->
-<section id="bug" class="pt-24 pb-32 bg-gradient-to-br from-indigo-900 via-purple-800 to-indigo-950">
+  <!-- Gue Kece - Achievement Gallery 2 -->
+  <section id="bug" class="pt-24 pb-32 bg-gradient-to-br from-indigo-900 via-purple-800 to-indigo-950">
     <div class="container mx-auto px-4">
       <h2 class="font-bold text-white text-4xl mb-6 text-center tracking-wide">
         ✨ Best Participant Awards
@@ -344,121 +409,154 @@
       <h3 class="font-semibold text-orange-300 uppercase text-lg mb-12 text-center tracking-widest">
         Outstanding Recognition & Consistent Excellence
       </h3>
-  
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-  
+
         <!-- Item 1 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up">
-          <img src="img/P. Speaking/gdgoc sertif.jpg" alt="Woment In Tech" class="w-full h-48 object-cover rounded-xl mb-6 shadow-lg shadow-teal-400/50 group-hover:scale-105 transition-transform duration-300">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
+          data-aos="fade-up">
+          <img src="img/P. Speaking/gdgoc sertif.jpg" alt="Woment In Tech"
+            class="w-full h-48 object-cover rounded-xl mb-6 shadow-lg shadow-teal-400/50 group-hover:scale-105 transition-transform duration-300">
           <h5 class="font-bold text-white text-xl mb-2">Women In Tech</h5>
           <p class="text-slate-300 leading-relaxed">
-            An inspiring seminar by GDGOC where I represented participants with strong public speaking — spotlighting the role of women in tech and community empowerment.
+            An inspiring seminar by GDGOC where I represented participants with strong public speaking — spotlighting
+            the role of women in tech and community empowerment.
           </p>
         </div>
-  
+
         <!-- Item 2 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="150">
-          <img src="img/P. Speaking/LDMKM.jpg" alt="Leadership Training" class="w-full h-48 object-cover rounded-xl mb-6 shadow-lg shadow-teal-400/50 group-hover:scale-105 transition-transform duration-300">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
+          data-aos="fade-up" data-aos-delay="150">
+          <img src="img/P. Speaking/LDMKM.jpg" alt="Leadership Training"
+            class="w-full h-48 object-cover rounded-xl mb-6 shadow-lg shadow-teal-400/50 group-hover:scale-105 transition-transform duration-300">
           <h5 class="font-bold text-white text-xl mb-2">Leadership & Management Training</h5>
           <p class="text-slate-300 leading-relaxed">
-            A transformative experience that shaped my leadership, communication, and team collaboration — training future leaders with vision and character.
+            A transformative experience that shaped my leadership, communication, and team collaboration — training
+            future leaders with vision and character.
           </p>
         </div>
-  
+
         <!-- Item 3 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
-          <img src="img/jmum.jpg" alt="Juara Umum" class="w-full h-48 object-cover rounded-xl mb-6 shadow-lg shadow-teal-400/50 group-hover:scale-105 transition-transform duration-300">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
+          data-aos="fade-up" data-aos-delay="300">
+          <img src="img/jmum.jpg" alt="Juara Umum"
+            class="w-full h-48 object-cover rounded-xl mb-6 shadow-lg shadow-teal-400/50 group-hover:scale-105 transition-transform duration-300">
           <h5 class="font-bold text-white text-xl mb-2">Overall Academic Champion</h5>
           <p class="text-slate-300 leading-relaxed">
-            Achieved top honors three years in a row during senior high school — proof of consistent excellence, discipline, and the spirit of lifelong learning.
+            Achieved top honors three years in a row during senior high school — proof of consistent excellence,
+            discipline, and the spirit of lifelong learning.
           </p>
         </div>
-  
+
       </div>
     </div>
-  </section>  
+  </section>
 
-<!-- Skills Gue -->
-<section id="skills" class="pt-36 pb-32 bg-gradient-to-br from-indigo-900 via-purple-800 to-indigo-950">
+  <!-- Skills Gue -->
+  <section id="skills" class="pt-36 pb-32 bg-gradient-to-br from-indigo-900 via-purple-800 to-indigo-950">
     <div class="container mx-auto px-4">
       <h4 class="font-bold uppercase text-orange-300 text-lg mb-2 text-center tracking-widest">My Skills</h4>
       <h2 class="font-extrabold text-white text-4xl mb-12 text-center tracking-tight">
         What Are the Skills I'm Good At?
       </h2>
-  
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <!-- Skill 1: Communication -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-xl hover:shadow-2xl transition-all duration-300">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-xl hover:shadow-2xl transition-all duration-300">
           <i class="fas fa-comments text-orange-400 text-4xl mb-4"></i>
           <h5 class="text-white font-semibold text-xl mb-2">Communication</h5>
           <p class="text-slate-300">Expert in building effective, clear, and impactful communication in any setting.</p>
         </div>
-  
+
         <!-- Skill 2: Public Speaking -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-xl hover:shadow-2xl transition-all duration-300">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-xl hover:shadow-2xl transition-all duration-300">
           <i class="fas fa-microphone-alt text-orange-400 text-4xl mb-4"></i>
           <h5 class="text-white font-semibold text-xl mb-2">Public Speaking</h5>
-          <p class="text-slate-300">Able to deliver presentations confidently, engage the audience, and inspire action.</p>
+          <p class="text-slate-300">Able to deliver presentations confidently, engage the audience, and inspire action.
+          </p>
         </div>
-  
+
         <!-- Skill 3: Python Programming -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-xl hover:shadow-2xl transition-all duration-300">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-xl hover:shadow-2xl transition-all duration-300">
           <i class="fab fa-python text-orange-400 text-4xl mb-4"></i>
           <h5 class="text-white font-semibold text-xl mb-2">Python Programming</h5>
-          <p class="text-slate-300">Write clean and efficient code with Python to build smart, scalable applications.</p>
+          <p class="text-slate-300">Write clean and efficient code with Python to build smart, scalable applications.
+          </p>
         </div>
-  
+
         <!-- Skill 4: Team Leadership -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-xl hover:shadow-2xl transition-all duration-300">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-xl hover:shadow-2xl transition-all duration-300">
           <i class="fas fa-users-cog text-orange-400 text-4xl mb-4"></i>
           <h5 class="text-white font-semibold text-xl mb-2">Team Leadership</h5>
-          <p class="text-slate-300">Guide teams with vision, foster collaboration, and drive results through inspiration.</p>
+          <p class="text-slate-300">Guide teams with vision, foster collaboration, and drive results through
+            inspiration.</p>
         </div>
       </div>
     </div>
   </section>
-  
-  <section id="certificates" class="pt-36 pb-32 bg-gradient-to-br from-indigo-900 via-purple-800 to-indigo-950 hidden-section">
+
+  <section id="certificates"
+    class="pt-36 pb-32 bg-gradient-to-br from-indigo-900 via-purple-800 to-indigo-950 hidden-section">
     <div class="container mx-auto px-4">
       <h4 class="font-bold uppercase text-orange-300 text-lg mb-2 text-center tracking-widest">My Certificates</h4>
       <h2 class="font-extrabold text-white text-4xl mb-12 text-center tracking-tight">
         Certificate for Attending Training
       </h2>
-  
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         <!-- Certificate 1 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-lg hover:shadow-2xl transition-all duration-300">
-          <img src="./img/sertif/MGMP.jpg" alt="Certificate 1" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-lg hover:shadow-2xl transition-all duration-300">
+          <img src="./img/sertif/MGMP.jpg" alt="Certificate 1"
+            class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
           <h5 class="text-white font-semibold text-xl mb-2">MGMP BAHASA INGGRIS SMK KABUPATEN BOGOR</h5>
-          <a href="./sertif/MGMP.pdf" target="_blank" class="text-orange-300 hover:text-teal-400 mt-2 inline-block transition duration-300">View Certificate</a>
+          <a href="./sertif/MGMP.pdf" target="_blank"
+            class="text-orange-300 hover:text-teal-400 mt-2 inline-block transition duration-300">View Certificate</a>
         </div>
-  
+
         <!-- Certificate 2 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-lg hover:shadow-2xl transition-all duration-300">
-          <img src="./img/sertif/LDMKM.jpg" alt="Certificate 2" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
-          <h5 class="text-white font-semibold text-xl mb-2">Fundamental Leadership and Management Training for University Students</h5>
-          <a href="./sertif/LDMKM.pdf" target="_blank" class="text-orange-300 hover:text-teal-400 mt-2 inline-block transition duration-300">View Certificate</a>
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-lg hover:shadow-2xl transition-all duration-300">
+          <img src="./img/sertif/LDMKM.jpg" alt="Certificate 2"
+            class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+          <h5 class="text-white font-semibold text-xl mb-2">Fundamental Leadership and Management Training for
+            University Students</h5>
+          <a href="./sertif/LDMKM.pdf" target="_blank"
+            class="text-orange-300 hover:text-teal-400 mt-2 inline-block transition duration-300">View Certificate</a>
         </div>
-  
+
         <!-- Certificate 3 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-lg hover:shadow-2xl transition-all duration-300">
-          <img src="./img/sertif/myskill1.jpg" alt="Certificate 3" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center shadow-lg hover:shadow-2xl transition-all duration-300">
+          <img src="./img/sertif/myskill1.jpg" alt="Certificate 3"
+            class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
           <h5 class="text-white font-semibold text-xl mb-2">Data Science Introduction (MySkill)</h5>
-          <a href="./sertif/MYSKILL.pdf" target="_blank" class="text-orange-300 hover:text-teal-400 mt-2 inline-block transition duration-300">View Certificate</a>
+          <a href="./sertif/MYSKILL.pdf" target="_blank"
+            class="text-orange-300 hover:text-teal-400 mt-2 inline-block transition duration-300">View Certificate</a>
         </div>
       </div>
     </div>
   </section>
-  
 
-  <section id="partnership" class="pt-24 pb-24 bg-gradient-to-br from-indigo-950 via-indigo-800 to-[#0C0950] hidden-section">
+
+  <section id="partnership"
+    class="pt-24 pb-24 bg-gradient-to-br from-indigo-950 via-indigo-800 to-[#0C0950] hidden-section">
     <div class="container mx-auto px-4">
-      <h1 class="font-bold uppercase text-orange-300 text-lg mb-10 text-center tracking-widest">Collaboration with Companies</h1>
-  
+      <h1 class="font-bold uppercase text-orange-300 text-lg mb-10 text-center tracking-widest">Collaboration with
+        Companies</h1>
+
       <div class="flex flex-wrap justify-center items-center gap-14">
         <!-- Google Logo -->
         <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="h-12 md:h-16">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+            class="h-12 md:h-16">
         </div>
         <!-- Shopee Logo -->
         <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
@@ -473,39 +571,44 @@
           <img src="img/BSSN.png" alt="BSSN Logo" class="h-12 md:h-16">
         </div>
       </div>
-  
+
       <p class="text-slate-300 text-center mt-10 max-w-3xl mx-auto text-lg leading-relaxed">
-        We are proud to collaborate with industry leaders such as <span class="text-orange-300 font-semibold">Google</span>, <span class="text-orange-300 font-semibold">Shopee</span>, <span class="text-orange-300 font-semibold">BUMN</span>, and <span class="text-orange-300 font-semibold">BSSN</span>. These partnerships empower us to drive innovation and create meaningful impact.
+        We are proud to collaborate with industry leaders such as <span
+          class="text-orange-300 font-semibold">Google</span>, <span
+          class="text-orange-300 font-semibold">Shopee</span>, <span class="text-orange-300 font-semibold">BUMN</span>,
+        and <span class="text-orange-300 font-semibold">BSSN</span>. These partnerships empower us to drive innovation
+        and create meaningful impact.
       </p>
     </div>
-  </section>  
+  </section>
 
 
-<!-- Footer -->
-<footer class="bg-[#0C0950] text-white py-8">
+  <!-- Footer -->
+  <footer class="bg-[#0C0950] text-white py-8">
     <div class="container mx-auto px-4 text-center">
-        <div class="mt-4">
-            <a href="#home" class="text-slate-400 hover:text-teal-500 mx-2">&copy;Copyright 2025 Fadilorsy. Made With ❤</a>
-        </div>
+      <div class="mt-4">
+        <a href="#home" class="text-slate-400 hover:text-teal-500 mx-2">&copy;Copyright 2025 Fadilorsy. Made With ❤</a>
+      </div>
     </div>
-</footer>
-       <script src="./js/script.js"></script>
-       <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000, // durasi animasi (ms)
-    once: true // hanya sekali saat pertama scroll
-  });
-</script>
+  </footer>
+  <script src="./js/script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, // durasi animasi (ms)
+      once: true // hanya sekali saat pertama scroll
+    });
+  </script>
 
-<script>
+  <script>
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
-  
+
     menuToggle.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
     });
   </script>
-  
+
 </body>
+
 </html>
