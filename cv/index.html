@@ -1,171 +1,162 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV - Muhamad Fadil</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-    
+
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #e6e6e6;
     }
-    
-    .purple-gradient {
-      background: linear-gradient(135deg, #6b46c1 0%, #9f7aea 100%);
+
+    .dark-gradient {
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%);
     }
-    
-    .purple-gradient-text {
-      background: linear-gradient(135deg, #9f7aea 0%, #6b46c1 100%);
+
+    .gradient-text {
+      background: linear-gradient(135deg, #a8c0ff 0%, #3f2b96 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
+
     .skill-badge {
-      background: rgba(159, 122, 234, 0.2);
-      border: 1px solid rgba(159, 122, 234, 0.3);
+      background: rgba(168, 192, 255, 0.15);
+      border: 1px solid rgba(168, 192, 255, 0.3);
+      color: #d1d5db;
     }
-    
+
     .timeline-dot {
-      background: #9f7aea;
-      box-shadow: 0 0 0 4px rgba(159, 122, 234, 0.2);
+      background: #a8c0ff;
+      box-shadow: 0 0 0 4px rgba(168, 192, 255, 0.2);
     }
-    
+
     .floating-btn {
-      box-shadow: 0 5px 15px rgba(167, 139, 250, 0.4);
+      box-shadow: 0 5px 15px rgba(168, 192, 255, 0.3);
       transition: all 0.3s ease;
     }
-    
+
     .floating-btn:hover {
       transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 25px rgba(167, 139, 250, 0.6);
+      box-shadow: 0 8px 25px rgba(168, 192, 255, 0.5);
     }
-    
+
     .glass-card {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(30, 41, 59, 0.7);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-divider {
+      border-color: rgba(168, 192, 255, 0.2);
     }
   </style>
 </head>
+
 <body class="min-h-screen py-10">
-  <div class="max-w-5xl mx-auto glass-card rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-3 gap-0 shadow-2xl">
-    
-    <!-- Left Panel - Purple Gradient -->
-    <div class="purple-gradient text-white p-8 flex flex-col items-center space-y-8">
+  <div
+    class="max-w-5xl mx-auto glass-card rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-3 gap-0 shadow-2xl">
+
+    <!-- Left Panel - Dark Gradient -->
+    <div class="dark-gradient p-8 flex flex-col items-center space-y-8">
       <!-- Profile Photo -->
       <div class="relative group">
-        <img src="../img/P. Speaking/BEM.jpg" alt="Foto Profil" 
-             class="w-36 h-36 object-cover rounded-full border-4 border-white/80 shadow-xl transition-transform duration-300 group-hover:scale-105" />
-        <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-purple-300/50 transition-all duration-300"></div>
+        <img src="../img/foto cv.jpg" alt="Foto Profil"
+          class="w-36 h-36 object-cover rounded-full border-4 border-white/20 shadow-xl transition-transform duration-300 group-hover:scale-105" />
+        <div
+          class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-blue-300/30 transition-all duration-300">
+        </div>
       </div>
-      
+
       <!-- Name & Title -->
       <div class="text-center space-y-2">
         <h1 class="text-2xl font-bold tracking-wide">Muhamad Fadil</h1>
-        <p class="text-sm text-purple-200">(Fadilorsy)</p>
-        <p class="text-xs text-purple-100 bg-white/10 rounded-full px-3 py-1 inline-block">Lulusan SMK Insan Madani</p>
+        <p class="text-sm text-blue-300">(Fadilorsy)</p>
+        <p class="text-xs text-blue-200 bg-white/10 rounded-full px-3 py-1 inline-block">Lulusan SMK Insan Madani</p>
       </div>
 
       <!-- Contact Info -->
       <div class="w-full space-y-4">
-        <h2 class="text-lg font-semibold border-b border-purple-300/30 pb-2 flex items-center">
-          <i class="fas fa-address-card mr-2 text-purple-200"></i> Kontak
+        <h2 class="text-lg font-semibold border-b border-blue-400/20 pb-2 flex items-center">
+          <i class="fas fa-at mr-2 text-blue-300"></i> Kontak
         </h2>
         <ul class="space-y-3">
           <li class="flex items-center">
-            <div class="bg-purple-500/20 p-2 rounded-full mr-3">
-              <i class="fas fa-phone text-purple-100 text-sm"></i>
+            <div class="bg-blue-500/20 p-2 rounded-full mr-3">
+              <i class="fab fa-linkedin text-blue-300 text-sm"></i>
             </div>
-            <span class="text-sm">0857-1495-8747</span>
+            <a href="https://www.linkedin.com/in/muhamad-fadil-418ba5334/"
+              class="text-sm text-blue-300 hover:text-white hover:underline">linkedin.com/in/fadilorsy</a>
           </li>
           <li class="flex items-center">
-            <div class="bg-purple-500/20 p-2 rounded-full mr-3">
-              <i class="fas fa-map-marker-alt text-purple-100 text-sm"></i>
+            <div class="bg-blue-500/20 p-2 rounded-full mr-3">
+              <i class="fab fa-github text-blue-300 text-sm"></i>
             </div>
-            <span class="text-sm">Jl. Mardhotillah, Jagakarsa, Jakarta Selatan</span>
-          </li>
-          <li class="flex items-center">
-            <div class="bg-purple-500/20 p-2 rounded-full mr-3">
-              <i class="fas fa-globe text-purple-100 text-sm"></i>
-            </div>
-            <a href="" class="text-sm text-purple-200 hover:text-white hover:underline">nlink.at/Fadilorsy</a>
+            <a href="https://github.com/muhamadfadil316"
+              class="text-sm text-blue-300 hover:text-white hover:underline">github.com/fadilorsy</a>
           </li>
         </ul>
       </div>
 
       <!-- Skills -->
       <div class="w-full space-y-4">
-        <h2 class="text-lg font-semibold border-b border-purple-300/30 pb-2 flex items-center">
-          <i class="fas fa-tools mr-2 text-purple-200"></i> Keahlian
+        <h2 class="text-lg font-semibold border-b border-blue-400/20 pb-2 flex items-center">
+          <i class="fas fa-tools mr-2 text-blue-300"></i> Hard Skills
         </h2>
         <div class="flex flex-wrap gap-2">
-          <span class="skill-badge text-xs px-3 py-1 rounded-full">Product Management</span>
-          <span class="skill-badge text-xs px-3 py-1 rounded-full">Public Speaking</span>
           <span class="skill-badge text-xs px-3 py-1 rounded-full">HTML/CSS/JS</span>
           <span class="skill-badge text-xs px-3 py-1 rounded-full">Python</span>
+          <span class="skill-badge text-xs px-3 py-1 rounded-full">Office Suite</span>
+          <span class="skill-badge text-xs px-3 py-1 rounded-full">Database</span>
+          <span class="skill-badge text-xs px-3 py-1 rounded-full">UI/UX Design</span>
+          <span class="skill-badge text-xs px-3 py-1 rounded-full">Technical Writing</span>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="w-full space-y-4">
+        <h2 class="text-lg font-semibold border-b border-blue-400/20 pb-2 flex items-center">
+          <i class="fas fa-brain mr-2 text-blue-300"></i> Soft Skills
+        </h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-badge text-xs px-3 py-1 rounded-full">Public Speaking</span>
           <span class="skill-badge text-xs px-3 py-1 rounded-full">Leadership</span>
           <span class="skill-badge text-xs px-3 py-1 rounded-full">Teamwork</span>
+          <span class="skill-badge text-xs px-3 py-1 rounded-full">Problem Solving</span>
+          <span class="skill-badge text-xs px-3 py-1 rounded-full">Time Management</span>
+          <span class="skill-badge text-xs px-3 py-1 rounded-full">Adaptability</span>
         </div>
       </div>
     </div>
 
     <!-- Right Panel - Content -->
-    <div class="col-span-2 p-8 bg-white">
+    <div class="col-span-2 p-8 bg-gray-900/50">
       <div class="space-y-8">
-        <!-- Personal Data -->
+        <!-- About Me -->
         <section>
-          <h2 class="text-xl font-bold pb-2 mb-4 purple-gradient-text border-b border-gray-200 flex items-center">
-            <i class="fas fa-user-circle mr-2"></i> Data Pribadi
+          <h2 class="text-xl font-bold pb-2 mb-4 gradient-text border-b section-divider flex items-center">
+            <i class="fas fa-user-astronaut mr-2"></i> Tentang Saya
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-            <div class="flex items-start">
-              <div class="text-purple-500 mr-3 mt-0.5">
-                <i class="fas fa-birthday-cake"></i>
-              </div>
-              <div>
-                <strong class="text-gray-600">Tempat, Tanggal Lahir:</strong>
-                <p>Jakarta, 03 Januari 2007</p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="text-purple-500 mr-3 mt-0.5">
-                <i class="fas fa-venus-mars"></i>
-              </div>
-              <div>
-                <strong class="text-gray-600">Jenis Kelamin:</strong>
-                <p>Laki-laki</p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="text-purple-500 mr-3 mt-0.5">
-                <i class="fas fa-pray"></i>
-              </div>
-              <div>
-                <strong class="text-gray-600">Agama:</strong>
-                <p>Islam</p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="text-purple-500 mr-3 mt-0.5">
-                <i class="fas fa-flag"></i>
-              </div>
-              <div>
-                <strong class="text-gray-600">Kewarganegaraan:</strong>
-                <p>Indonesia</p>
-              </div>
-            </div>
-          </div>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Saya seorang lulusan SMK dengan spesialisasi di bidang administrasi perkantoran yang sedang menempuh
+            pendidikan tinggi di bidang Teknik Informatika.
+            Memiliki passion di bidang teknologi dan pengembangan diri, saya menggabungkan keterampilan teknis dengan
+            kemampuan interpersonal yang kuat.
+            Berpengalaman dalam berbagai proyek kolaboratif dan selalu bersemangat untuk mempelajari hal-hal baru.
+          </p>
         </section>
 
         <!-- Education -->
         <section>
-          <h2 class="text-xl font-bold pb-2 mb-4 purple-gradient-text border-b border-gray-200 flex items-center">
+          <h2 class="text-xl font-bold pb-2 mb-4 gradient-text border-b section-divider flex items-center">
             <i class="fas fa-graduation-cap mr-2"></i> Pendidikan
           </h2>
           <div class="space-y-4">
@@ -173,24 +164,32 @@
             <div class="flex">
               <div class="relative mr-4">
                 <div class="timeline-dot w-3 h-3 rounded-full mt-1.5"></div>
-                <div class="absolute left-1.5 top-4 bottom-0 w-px bg-purple-200"></div>
+                <div class="absolute left-1.5 top-4 bottom-0 w-px bg-blue-300/30"></div>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-800">STT-NF - Teknik Informatika</h3>
-                <p class="text-sm text-gray-500">2024 - Sekarang</p>
-                <p class="text-sm text-gray-600 mt-1">Fokus pada pengembangan keterampilan di bidang teknologi informasi dan pemrograman.</p>
+                <h3 class="font-semibold text-gray-100">STT-NF - Teknik Informatika</h3>
+                <p class="text-sm text-blue-300">2024 - Sekarang</p>
+                <p class="text-sm text-gray-400 mt-1">
+                  Fokus pada pengembangan keterampilan pemrograman, algoritma, dan sistem informasi.
+                  Aktif dalam berbagai kegiatan kampus termasuk seminar teknologi dan workshop pengembangan produk
+                  digital.
+                </p>
               </div>
             </div>
-            
+
             <!-- SMK Insan Madani -->
             <div class="flex">
               <div class="relative mr-4">
                 <div class="timeline-dot w-3 h-3 rounded-full mt-1.5"></div>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-800">SMK Insan Madani - Otomatisasi Tata Kelola Perkantoran</h3>
-                <p class="text-sm text-gray-500">2021 - 2024</p>
-                <p class="text-sm text-gray-600 mt-1">Mempelajari administrasi perkantoran modern dan teknologi informasi untuk tata kelola kantor.</p>
+                <h3 class="font-semibold text-gray-100">SMK Insan Madani - Otomatisasi Tata Kelola Perkantoran</h3>
+                <p class="text-sm text-blue-300">2021 - 2024</p>
+                <p class="text-sm text-gray-400 mt-1">
+                  Mempelajari administrasi perkantoran modern dengan fokus pada teknologi informasi untuk tata kelola
+                  kantor.
+                  Menguasai berbagai software perkantoran dan sistem manajemen dokumen digital.
+                </p>
               </div>
             </div>
           </div>
@@ -198,22 +197,69 @@
 
         <!-- Experience -->
         <section>
-          <h2 class="text-xl font-bold pb-2 mb-4 purple-gradient-text border-b border-gray-200 flex items-center">
+          <h2 class="text-xl font-bold pb-2 mb-4 gradient-text border-b section-divider flex items-center">
             <i class="fas fa-briefcase mr-2"></i> Pengalaman
           </h2>
-          <div class="flex">
-            <div class="relative mr-4">
-              <div class="timeline-dot w-3 h-3 rounded-full mt-1.5"></div>
+          <div class="space-y-6">
+            <!-- Experience 1 -->
+            <div class="flex">
+              <div class="relative mr-4">
+                <div class="timeline-dot w-3 h-3 rounded-full mt-1.5"></div>
+                <div class="absolute left-1.5 top-4 bottom-0 w-px bg-blue-300/30"></div>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-100">Staff Administrasi - Institusi Pemerintah</h3>
+                <p class="text-sm text-blue-300">2023 - 2024</p>
+                <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+                  <li>Mengelola sistem dokumentasi dan arsip digital untuk lebih dari 500 dokumen bulanan</li>
+                  <li>Mengembangkan template otomatis untuk laporan rutin, mengurangi waktu penyusunan hingga 30%</li>
+                  <li>Berkoordinasi dengan 5 departemen berbeda untuk kebutuhan administrasi</li>
+                  <li>Melatih 3 staff baru dalam penggunaan sistem manajemen dokumen digital</li>
+                </ul>
+              </div>
             </div>
-            <div class="pb-4">
-              <h3 class="font-semibold text-gray-800">Polres Bogor Kabag Logistik - Staff Administrasi</h3>
-              <p class="text-sm text-gray-500">2023 - 2024</p>
-              <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
-                <li>Melakukan kegiatan surat menyurat dan pengarsipan dokumen</li>
-                <li>Mengelola administrasi kantor dan database logistik</li>
-                <li>Berkoordinasi dengan berbagai departemen untuk kebutuhan administrasi</li>
-                <li>Membantu dalam penyusunan laporan bulanan</li>
-              </ul>
+
+            <!-- Experience 2 -->
+            <div class="flex">
+              <div class="relative mr-4">
+                <div class="timeline-dot w-3 h-3 rounded-full mt-1.5"></div>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-100">Ketua Organisasi Siswa</h3>
+                <p class="text-sm text-blue-300">2022 - 2023</p>
+                <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+                  <li>Memimpin tim beranggotakan 15 orang dalam penyelenggaraan 5 acara sekolah besar</li>
+                  <li>Mengembangkan sistem komunikasi internal yang meningkatkan efisiensi koordinasi sebesar 40%</li>
+                  <li>Mewakili sekolah dalam 3 kompetensi public speaking tingkat regional</li>
+                  <li>Membuat proposal sponsorship yang berhasil mendapatkan dana sebesar Rp 15.000.000</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section>
+          <h2 class="text-xl font-bold pb-2 mb-4 gradient-text border-b section-divider flex items-center">
+            <i class="fas fa-project-diagram mr-2"></i> Proyek & Pencapaian
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+              <h3 class="font-semibold text-blue-300 flex items-center">
+                <i class="fas fa-code mr-2"></i> Aplikasi Manajemen Dokumen
+              </h3>
+              <p class="text-xs text-gray-400 mt-1">
+                Mengembangkan sistem manajemen dokumen berbasis web untuk keperluan organisasi menggunakan HTML, CSS,
+                dan JavaScript.
+              </p>
+            </div>
+            <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+              <h3 class="font-semibold text-blue-300 flex items-center">
+                <i class="fas fa-trophy mr-2"></i> Juara 1 Public Speaking
+              </h3>
+              <p class="text-xs text-gray-400 mt-1">
+                Meraih juara 1 dalam kompetisi public speaking tingkat sekolah dengan tema "Teknologi dan Masa Depan".
+              </p>
             </div>
           </div>
         </section>
@@ -222,8 +268,10 @@
   </div>
 
   <!-- Back Button -->
-  <a href="../index.html" class="fixed bottom-8 right-8 floating-btn w-14 h-14 bg-purple-500 rounded-full flex items-center justify-center hover:bg-purple-600">
+  <a href="../index.html"
+    class="fixed bottom-8 right-8 floating-btn w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600">
     <i class="fas fa-arrow-left text-white text-xl"></i>
   </a>
 </body>
+
 </html>
