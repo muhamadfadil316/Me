@@ -75,101 +75,148 @@
 
   <!-- ___________________________________________________________________________________________ -->
 
-  <!-- hero -->
-  <section id="home" class="pt-36 hidden-section">
-    <div class="container">
-      <div class="flex flex-wrap">
-        <!-- Text -->
-        <div class="w-full self-center px-4 lg:w-1/2">
-          <h1 class="text-base font-semibold text-[#261FB3] md:text-xl">Haiii👋🏻, My name is</h1>
-          <span class="block font-bold text-[#261FB3] text-4xl mt-1 lg:text-5xl">Muhamad Fadil</span>
-          <h2 class="font-medium text-slate-400 text-lg mb-5 lg:text-2xl">
-            <span class="block">Informatics Engineering | Public Speakers</span>
-            <span class="text-[#261FB3] lg:block">(Penetration Testing)</span>
-          </h2>
+  <!-- Hero Section -->
+  <section id="home" class="pt-36 relative overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#0C0950]/10 via-[#161179]/10 to-[#261FB3]/10"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-white to-transparent"></div>
+    </div>
 
-          <!--button-->
-          <div class="mb-6 flex gap-4 flex-wrap">
-            <a href="./mysong/index.html" class="relative overflow-hidden group">
-              <span
-                class="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#4B0082] group-hover:bg-gradient-to-bl transition-all duration-300 rounded-full"></span>
-              <span class="relative z-10 flex items-center text-white font-medium py-3 px-8 text-lg tracking-wide">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 group-hover:animate-bounce" fill="none"
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center">
+        <!-- Text Content -->
+        <div class="w-full lg:w-1/2 lg:pr-10">
+          <div class="mb-2 flex items-center">
+            <div class="w-12 h-1 bg-gradient-to-r from-[#261FB3] to-[#8A2BE2] mr-4"></div>
+            <span class="text-lg font-medium text-[#261FB3]">Hello, I'm</span>
+          </div>
+
+          <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+            Muhamad <span class="text-[#261FB3]">Fadil</span>
+          </h1>
+
+          <div class="mb-6">
+            <div class="inline-block relative">
+              <span class="text-2xl lg:text-3xl font-medium text-gray-600 relative z-10">
+                <span class="typing-animation">Informatics Engineer</span>
+              </span>
+              <div class="absolute bottom-0 left-0 w-full h-2 bg-[#8A2BE2]/30 -z-0"></div>
+            </div>
+            <p class="text-lg text-gray-500 mt-2">Specializing in Penetration Testing & Public Speaking</p>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a href="./mysong/index.html" class="relative group">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-[#8A2BE2] to-[#4B0082] rounded-lg transform group-hover:scale-105 transition-all duration-300">
+              </div>
+              <div class="relative px-8 py-3 rounded-lg flex items-center text-white font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 group-hover:animate-pulse" fill="none"
                   viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                 </svg>
                 MySongs
-              </span>
+              </div>
             </a>
 
-            <a href="./cv/index.html" class="relative overflow-hidden group">
-              <span
-                class="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#4B0082] group-hover:bg-gradient-to-bl transition-all duration-300 rounded-full"></span>
-              <span class="relative z-10 flex items-center text-white font-medium py-3 px-8 text-lg tracking-wide">
+            <a href="./cv/index.html" class="relative group">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-[#4B0082] to-[#261FB3] rounded-lg transform group-hover:scale-105 transition-all duration-300">
+              </div>
+              <div class="relative px-8 py-3 rounded-lg flex items-center text-white font-medium">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 group-hover:animate-bounce" fill="none"
                   viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 12h1m-1 4h1m2-8h-8m8 0V5a2 2 0 00-2-2H9a2 2 0 00-2 2v1" />
                 </svg>
-                CV
-              </span>
+                View CV
+              </div>
             </a>
           </div>
 
-          <!-- Social Media Icons -->
-          <div class="flex items-center space-x-4">
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/fadilorsy?igsh=MW1wYmxvZTk4em9jeQ%3D%3D&utm_source=qr" target="_blank"
-              class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
-              <i class="fa-brands fa-instagram fill-current"></i>
+          <!-- Social Media -->
+          <div class="flex space-x-4">
+            <a href="https://www.instagram.com/fadilorsy" target="_blank"
+              class="social-icon hover:bg-gradient-to-br from-pink-600 to-purple-600">
+              <i class="fab fa-instagram"></i>
             </a>
-            <!-- Spotify -->
-            <a href="https://open.spotify.com/playlist/3Uc6LyP30m1WdJmvn9I1xL?si=CuBtxlQESxiLTP_yKKVHZw&pi=qiUQveifRUqH3"
-              target="_blank"
-              class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
-              <i class="fa-brands fa-spotify fill-current"></i>
+            <a href="https://open.spotify.com/playlist/3Uc6LyP30m1WdJmvn9I1xL" target="_blank"
+              class="social-icon hover:bg-gradient-to-br from-green-500 to-green-700">
+              <i class="fab fa-spotify"></i>
             </a>
-            <!-- GitHub -->
             <a href="https://github.com/muhamadfadil316" target="_blank"
-              class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
-              <i class="fa-brands fa-github fill-current"></i>
+              class="social-icon hover:bg-gradient-to-br from-gray-700 to-gray-900">
+              <i class="fab fa-github"></i>
             </a>
-            <!-- linkedin -->
-            <a href="https://www.linkedin.com/in/muhamad-fadil-418ba5334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-              target="_blank"
-              class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
-              <i class="fa-brands fa-linkedin fill-current"></i>
+            <a href="https://www.linkedin.com/in/muhamad-fadil-418ba5334" target="_blank"
+              class="social-icon hover:bg-gradient-to-br from-blue-600 to-blue-800">
+              <i class="fab fa-linkedin-in"></i>
             </a>
-            <!-- TikTok -->
-            <a href="https://www.tiktok.com/@fadilorsy?_t=ZS-8vlZ3n404db&_r=1" target="_blank"
-              class="w-9 h-9 rounded-full flex justify-center items-center border border-slate-300 bg-white hover:border-teal-500 hover:bg-blue-500 hover:text-white">
-              <i class="fa-brands fa-tiktok fill-current"></i>
+            <a href="https://www.tiktok.com/@fadilorsy" target="_blank"
+              class="social-icon hover:bg-gradient-to-br from-black to-gray-700">
+              <i class="fab fa-tiktok"></i>
             </a>
-
           </div>
         </div>
-        <!-- Gambar -->
-        <div class="w-full self-end px-4 lg:w-1/2 lg:order-last">
-          <div class="relative mt-10 lg:mt-0 lg:right-0">
-            <img src="./img/me-nobg.png" alt="foto1" class="max-w-full mx-auto ">
-            <span class="absolute -bottom-10 -z-10 left-1/2 -translate-x-1/2 md:scale-125 ">
-              <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#9370db" />
-                    <stop offset="100%" stop-color="#483d8b" />
-                  </linearGradient>
-                </defs>
-                <path fill="url(#grad2)" d="M0,100 C50,180 50,20 100,100 C150,180 150,20 200,100 L200,200 L0,200 Z">
-                </path>
-              </svg>
-            </span>
+
+        <!-- Image Content -->
+        <div class="w-full lg:w-1/2 mt-12 lg:mt-0 relative">
+          <div class="relative max-w-md mx-auto">
+            <div class="absolute -inset-4 bg-gradient-to-r from-[#8A2BE2] to-[#4B0082] rounded-2xl blur-lg opacity-30">
+            </div>
+            <div class="relative bg-white rounded-xl shadow-xl overflow-hidden">
+              <img src="./img/me-nobg.png" alt="Muhamad Fadil" class="w-full h-auto object-cover">
+            </div>
+          </div>
+
+          <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-[#8A2BE2]/20 rounded-full filter blur-3xl opacity-70">
+          </div>
+          <div class="absolute -top-20 -right-20 w-64 h-64 bg-[#4B0082]/20 rounded-full filter blur-3xl opacity-70">
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <style>
+    .social-icon {
+      @apply w-10 h-10 rounded-full flex items-center justify-center text-white bg-gray-800 transition-all duration-300;
+      @apply hover:text-white hover:shadow-lg hover:-translate-y-1;
+    }
+
+    .typing-animation {
+      border-right: 2px solid;
+      animation: blink 1s step-end infinite, typing 3s steps(18) 1s 1 normal both;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
+    }
+
+    @keyframes blink {
+
+      from,
+      to {
+        border-color: transparent
+      }
+
+      50% {
+        border-color: #261FB3
+      }
+    }
+  </style>
 
   <style>
     @media (max-width: 1023px) {
