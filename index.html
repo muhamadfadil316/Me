@@ -244,8 +244,20 @@
 
   <style>
     .social-icon {
-      @apply w-10 h-10 rounded-full flex items-center justify-center text-white bg-gray-800 transition-all duration-300;
-      @apply hover:text-white hover:shadow-lg hover:-translate-y-1;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background-color: #2d3748; /* Tailwind bg-gray-800 */
+      transition: all 0.3s;
+    }
+    .social-icon:hover {
+      color: #fff;
+      box-shadow: 0 10px 15px -3px rgba(56,189,248,0.1), 0 4px 6px -4px rgba(56,189,248,0.1); /* Tailwind shadow-lg */
+      transform: translateY(-0.25rem); /* Tailwind -translate-y-1 */
     }
 
     .typing-animation {
